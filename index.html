@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrystalClean Pressure Washing | Professional Exterior Cleaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom Animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 30, 60, 0.7), rgba(0, 30, 60, 0.7)), url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism for cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Before/After slider styling would go here, 
+           but using a grid for better compatibility in single file */
+        .gallery-img:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-blue-600 p-2 rounded-lg text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Crystal<span class="text-blue-600">Clean</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-slate-600 hover:text-blue-600 font-medium transition">Services</a>
+                    <a href="#process" class="text-slate-600 hover:text-blue-600 font-medium transition">How It Works</a>
+                    <a href="#gallery" class="text-slate-600 hover:text-blue-600 font-medium transition">Recent Work</a>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Get a Free Quote
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Services</a>
+                <a href="#process" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">How It Works</a>
+                <a href="#gallery" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-md">Recent Work</a>
+                <a href="#contact" class="block mt-4 px-3 py-3 text-center text-base font-bold text-white bg-blue-600 rounded-md hover:bg-blue-700">Get a Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center hero-gradient text-white pt-20">
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
+            <div class="inline-block px-4 py-1 mb-6 rounded-full bg-blue-500/30 border border-blue-400/30 text-blue-100 font-semibold text-sm backdrop-blur-sm">
+                #1 Rated Exterior Cleaning Service
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Restore the Shine to <br/><span class="text-blue-400">Your Property</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-200 mb-10">
+                Professional residential and commercial pressure washing. We remove grime, mold, and stains to make your surfaces look brand new.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-500 transition shadow-lg hover:shadow-blue-500/50">
+                    Get Instant Quote
+                </a>
+                <a href="#services" class="px-8 py-4 bg-white/10 text-white border border-white/30 rounded-full font-bold text-lg hover:bg-white/20 transition backdrop-blur-md">
+                    View Our Services
+                </a>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm font-medium text-slate-300">
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Fully Insured
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Eco-Friendly Products
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Satisfaction Guaranteed
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-blue-600 font-bold uppercase tracking-wide text-sm mb-2">Our Expertise</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Comprehensive Cleaning Services</h3>
+                <p class="mt-4 text-xl text-slate-600 max-w-2xl mx-auto">We use appropriate pressure and eco-friendly chemicals for every surface type.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">House Soft Washing</h4>
+                    <p class="text-slate-600 leading-relaxed">Low-pressure cleaning to safely remove algae, mold, and dirt from siding without damaging your home's exterior.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Driveway & Concrete</h4>
+                    <p class="text-slate-600 leading-relaxed">Restore your driveway, sidewalks, and patios. We remove tough oil stains, tire marks, and years of accumulated grime.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M20 22V5l-10-4L2 5v17"/><path d="M12 9v13"/><path d="M16 14h4"/><path d="M4 14h4"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Roof Cleaning</h4>
+                    <p class="text-slate-600 leading-relaxed">Eliminate black streaks (Gloeocapsa Magma) and moss to extend the lifespan of your roof shingles.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Deck & Fence Restoration</h4>
+                    <p class="text-slate-600 leading-relaxed">Wood cleaning and brightening to prepare your deck or fence for staining, or simply to make it look new.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Commercial Services</h4>
+                    <p class="text-slate-600 leading-relaxed">Storefronts, parking lots, and building exteriors. Make a great first impression on your customers.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Gutter Cleaning</h4>
+                    <p class="text-slate-600 leading-relaxed">Removal of debris and functional testing of downspouts to ensure proper water drainage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / CTA Ribbon -->
+    <section class="bg-blue-600 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-white text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-2">Ready to transform your home?</h2>
+                    <p class="text-blue-100 text-lg">Get a free, no-obligation quote in less than 24 hours.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="tel:5551234567" class="bg-white text-blue-600 hover:bg-slate-100 px-6 py-4 rounded-full font-bold flex items-center gap-2 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        (555) 123-4567
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-4 rounded-full font-bold transition">
+                        Request Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-blue-600 font-bold uppercase tracking-wide text-sm mb-2">Portfolio</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Recent Projects</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-xl h-64 shadow-lg cursor-pointer">
+                    <img src="Driveway Cleaning.jpg" alt="Driveway Cleaning" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Driveway Restoration</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl h-64 shadow-lg cursor-pointer">
+                    <img src="Soft Wash.jpg" alt="House Washing" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Siding Soft Wash</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl h-64 shadow-lg cursor-pointer">
+                    <img src="Deck Cleaning.jpg" alt="Deck Cleaning" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Deck Brightening</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Quote Form Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-blue-600 font-bold uppercase tracking-wide text-sm mb-2">Get in Touch</h2>
+                    <h3 class="text-4xl font-bold text-slate-900 mb-6">Let's Clean Up Your Property</h3>
+                    <p class="text-slate-600 text-lg mb-8">
+                        Fill out the form for a fast, free estimate. We typically respond within 2 hours during business days.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Phone</h4>
+                                <p class="text-slate-600">(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Email</h4>
+                                <p class="text-slate-600">hello@crystalcleandemo.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Hours</h4>
+                                <p class="text-slate-600">Mon - Sat: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                    <form id="quoteForm" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">First Name</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition outline-none" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Last Name</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition outline-none" placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition outline-none" placeholder="john@example.com">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Service Needed</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition outline-none text-slate-600">
+                                <option>House Washing</option>
+                                <option>Driveway Cleaning</option>
+                                <option>Roof Cleaning</option>
+                                <option>Deck/Fence Restoration</option>
+                                <option>Gutter Cleaning</option>
+                                <option>Commercial Services</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Message / Details</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 transition outline-none" placeholder="Tell us about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg hover:shadow-blue-500/30">
+                            Get Free Quote
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded-lg border border-green-200 text-center">
+                        <p class="font-bold">Message Sent!</p>
+                        <p class="text-sm">We'll be in touch shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        <span class="font-bold text-xl">CrystalClean</span>
+                    </div>
+                    <p class="max-w-xs text-sm">Professional exterior cleaning services dedicated to making your home shine. Fully insured and satisfaction guaranteed.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition">House Washing</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Concrete Cleaning</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Roof Washing</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Commercial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2023 CrystalClean Demo. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <!-- Social placeholders -->
+                    <a href="#" class="hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="#" class="hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.315 1.347 20.646.935 19.856.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.584.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-.138-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.383.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('bg-white/95', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('bg-white', 'bg-white/95');
+            }
+        });
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('quoteForm');
+            const button = form.querySelector('button');
+            const successMsg = document.getElementById('successMessage');
+
+            // Simulate sending state
+            const originalText = button.innerText;
+            button.innerText = "Sending...";
+            button.disabled = true;
+            button.classList.add('opacity-75', 'cursor-not-allowed');
+
+            setTimeout(() => {
+                // Reset form
+                form.reset();
+                
+                // Show success message
+                successMsg.classList.remove('hidden');
+                
+                // Reset button
+                button.innerText = originalText;
+                button.disabled = false;
+                button.classList.remove('opacity-75', 'cursor-not-allowed');
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
